@@ -46,17 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCarForm.Designer.cs">
+      <DependentUpon>AddCarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDriverForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddDriverForm.Designer.cs">
       <DependentUpon>AddDriverForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminCarsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminCarsForm.Designer.cs">
+      <DependentUpon>AdminCarsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminClientForm.Designer.cs">
+      <DependentUpon>AdminClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPriceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPriceForm.Designer.cs">
+      <DependentUpon>AdminPriceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Constants.cs" />
     <Compile Include="DriverForm.cs">
@@ -93,11 +117,32 @@
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserFormAdding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserFormAdding.Designer.cs">
+      <DependentUpon>UserFormAdding.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddCarForm.resx">
+      <DependentUpon>AddCarForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddDriverForm.resx">
       <DependentUpon>AddDriverForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminCarsForm.resx">
+      <DependentUpon>AdminCarsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminClientForm.resx">
+      <DependentUpon>AdminClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPriceForm.resx">
+      <DependentUpon>AdminPriceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverForm.resx">
+      <DependentUpon>DriverForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -113,6 +158,12 @@
     </Compile>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserFormAdding.resx">
+      <DependentUpon>UserFormAdding.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

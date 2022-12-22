@@ -85,8 +85,12 @@ namespace ServiceAboutTaxi
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
-                        {
+                        while (true) //reader.Read()
+                        {                            
+                            if (checkUniqueUserID(userID))
+                            {
+                                break;
+                            }
                             userID++;
                         }
                         LoginErrorLabel.Visible = isVisible;
@@ -96,8 +100,59 @@ namespace ServiceAboutTaxi
 
                 usersTableAdapter.Insert(userID, LoginTextBox.Text,
                     PasswordTextBox.Text, "Користувач");
+
+                int clientID = 1;
+                string findingClientID = "SELECT ClientID FROM Clients";
+                using (SqlConnection connection = new SqlConnection(
+                   Constants.ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand(
+                        findingClientID, connection);
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            clientID++;
+                        }
+                    }
+                    connection.Close();
+                }
+
+                ClientsTableAdapter clientsTableAdapter= new ClientsTableAdapter();
+                clientsTableAdapter.Insert(clientID,
+                    PhoneTextBox.Text,
+                    NameTextBox.Text,
+                    "",
+                    "",
+                    userID);
                 Close();
             }            
+        }
+
+        private bool checkUniqueUserID(int userID)
+        {
+            string selectedLogin = "SELECT UserID FROM Users";
+            using (SqlConnection connection = new SqlConnection(
+               Constants.ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(
+                    selectedLogin, connection);
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader[0].ToString() == userID.ToString())
+                        {
+                            return false;
+                        }
+                    }
+                }
+                connection.Close();
+            }
+
+            return true;
         }
     }
 }

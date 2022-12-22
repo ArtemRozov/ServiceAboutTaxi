@@ -10,6 +10,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace ServiceAboutTaxi
 {
@@ -41,18 +42,30 @@ namespace ServiceAboutTaxi
                             {
                                 if (reader[2].ToString() == "Системний адміністратор")
                                 {
+                                    // Обнуляємо юзерІД в константах, коли аккаунт не юзера
+                                    Constants.CurrentUserID = 0;
+
                                     AdminForm adminForm = new AdminForm();
                                     adminForm.Show();
                                     isFind = true;
                                     InvalidLoginLabel.Visible = false;
                                 } else if(reader[2].ToString() == "Водій")
                                 {
+                                    // Знаходимо юзерІД, та закидуємо в Констант клас,
+                                    // щоб розуміти, хто це в нас зайшов.
+                                    findUserID(reader[0]);
+
+                                    //Вмикаємо наступну форму
                                     DriverForm driverForm = new DriverForm();
                                     driverForm.Show();
                                     isFind = true;
                                     InvalidLoginLabel.Visible = false;
                                 } else if (reader[2].ToString() == "Користувач")
                                 {
+                                    // Знаходимо юзерІД, та закидуємо в Констант клас,
+                                    // щоб розуміти, хто це в нас зайшов.
+                                    findUserID(reader[0]);
+
                                     UserForm userForm = new UserForm();
                                     userForm.Show();
                                     isFind = true;
@@ -70,6 +83,41 @@ namespace ServiceAboutTaxi
                     }
                 }
                 connection.Close();
+            }
+        }
+
+        private void findUserID(object value)
+        {
+            int userID = -1;
+            string findingDriverID = @"SELECT UserID FROM Users WHERE Login=@log;";
+
+            using (SqlConnection connection1 = new SqlConnection(
+                        Constants.ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand(
+                    findingDriverID, connection1);
+                connection1.Open();
+                cmd.Parameters.AddWithValue("log", value);
+
+                using (SqlDataReader reader1 = cmd.ExecuteReader())
+                {
+                    if (reader1.HasRows)
+                    {
+                        while (reader1.Read())
+                        {
+                            userID = (int)reader1["UserID"];
+                        }
+                    }
+
+                    reader1.Close();
+                }
+
+                if (userID >= 0)
+                {
+                    Constants.CurrentUserID = userID;
+                }
+
+                connection1.Close();
             }
         }
 

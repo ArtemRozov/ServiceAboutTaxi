@@ -35,18 +35,6 @@
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.driversBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.serviceAboutTaxiDataSet = new ServiceAboutTaxi.ServiceAboutTaxiDataSet();
-            this.driversTableAdapter = new ServiceAboutTaxi.ServiceAboutTaxiDataSetTableAdapters.DriversTableAdapter();
-            this.AddUserButton = new System.Windows.Forms.Button();
-            this.DeleteUserButton = new System.Windows.Forms.Button();
-            this.ClientsButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CarsButton = new System.Windows.Forms.Button();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.PriceButton = new System.Windows.Forms.Button();
             this.driverIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sNPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,10 +45,24 @@
             this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.freedomDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.serviceAboutTaxiDataSet = new ServiceAboutTaxi.ServiceAboutTaxiDataSet();
+            this.AddUserButton = new System.Windows.Forms.Button();
+            this.DeleteUserButton = new System.Windows.Forms.Button();
+            this.ClientsButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CarsButton = new System.Windows.Forms.Button();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PriceButton = new System.Windows.Forms.Button();
+            this.driversTableAdapter = new ServiceAboutTaxi.ServiceAboutTaxiDataSetTableAdapters.DriversTableAdapter();
+            this.звітToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отриматиЗвітПоЗаказахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceAboutTaxiDataSet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +71,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.profileToolStripMenuItem});
+            this.profileToolStripMenuItem,
+            this.звітToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1054, 28);
@@ -123,7 +126,7 @@
             this.ratingDataGridViewTextBoxColumn,
             this.freedomDataGridViewCheckBoxColumn,
             this.userIDDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.driversBindingSource3;
+            this.dataGridView1.DataSource = this.driversBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 90);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -131,24 +134,101 @@
             this.dataGridView1.Size = new System.Drawing.Size(1055, 239);
             this.dataGridView1.TabIndex = 1;
             // 
-            // driversBindingSource3
+            // driverIDDataGridViewTextBoxColumn
             // 
-            this.driversBindingSource3.DataMember = "Drivers";
-            this.driversBindingSource3.DataSource = this.driversBindingSource;
+            this.driverIDDataGridViewTextBoxColumn.DataPropertyName = "DriverID";
+            this.driverIDDataGridViewTextBoxColumn.HeaderText = "DriverID";
+            this.driverIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.driverIDDataGridViewTextBoxColumn.Name = "driverIDDataGridViewTextBoxColumn";
+            this.driverIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sNPDataGridViewTextBoxColumn
+            // 
+            this.sNPDataGridViewTextBoxColumn.DataPropertyName = "SNP";
+            this.sNPDataGridViewTextBoxColumn.HeaderText = "SNP";
+            this.sNPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sNPDataGridViewTextBoxColumn.Name = "sNPDataGridViewTextBoxColumn";
+            this.sNPDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // yearOfBirthDataGridViewTextBoxColumn
+            // 
+            this.yearOfBirthDataGridViewTextBoxColumn.DataPropertyName = "YearOfBirth";
+            this.yearOfBirthDataGridViewTextBoxColumn.HeaderText = "YearOfBirth";
+            this.yearOfBirthDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.yearOfBirthDataGridViewTextBoxColumn.Name = "yearOfBirthDataGridViewTextBoxColumn";
+            this.yearOfBirthDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // passSeriesDataGridViewTextBoxColumn
+            // 
+            this.passSeriesDataGridViewTextBoxColumn.DataPropertyName = "PassSeries";
+            this.passSeriesDataGridViewTextBoxColumn.HeaderText = "PassSeries";
+            this.passSeriesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passSeriesDataGridViewTextBoxColumn.Name = "passSeriesDataGridViewTextBoxColumn";
+            this.passSeriesDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // passNoDataGridViewTextBoxColumn
+            // 
+            this.passNoDataGridViewTextBoxColumn.DataPropertyName = "PassNo";
+            this.passNoDataGridViewTextBoxColumn.HeaderText = "PassNo";
+            this.passNoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passNoDataGridViewTextBoxColumn.Name = "passNoDataGridViewTextBoxColumn";
+            this.passNoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // employmentDateDataGridViewTextBoxColumn
+            // 
+            this.employmentDateDataGridViewTextBoxColumn.DataPropertyName = "EmploymentDate";
+            this.employmentDateDataGridViewTextBoxColumn.HeaderText = "EmploymentDate";
+            this.employmentDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.employmentDateDataGridViewTextBoxColumn.Name = "employmentDateDataGridViewTextBoxColumn";
+            this.employmentDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ratingDataGridViewTextBoxColumn
+            // 
+            this.ratingDataGridViewTextBoxColumn.DataPropertyName = "Rating";
+            this.ratingDataGridViewTextBoxColumn.HeaderText = "Rating";
+            this.ratingDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
+            this.ratingDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // freedomDataGridViewCheckBoxColumn
+            // 
+            this.freedomDataGridViewCheckBoxColumn.DataPropertyName = "Freedom";
+            this.freedomDataGridViewCheckBoxColumn.HeaderText = "Freedom";
+            this.freedomDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.freedomDataGridViewCheckBoxColumn.Name = "freedomDataGridViewCheckBoxColumn";
+            this.freedomDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // userIDDataGridViewTextBoxColumn
+            // 
+            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
+            this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
+            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            this.userIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // driversBindingSource
             // 
-            this.driversBindingSource.DataSource = this.serviceAboutTaxiDataSet;
-            this.driversBindingSource.Position = 0;
+            this.driversBindingSource.DataMember = "Drivers";
+            this.driversBindingSource.DataSource = this.bindingSource1;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.AllowNew = true;
+            this.bindingSource1.DataSource = this.serviceAboutTaxiDataSet;
+            this.bindingSource1.Position = 0;
             // 
             // serviceAboutTaxiDataSet
             // 
             this.serviceAboutTaxiDataSet.DataSetName = "ServiceAboutTaxiDataSet";
             this.serviceAboutTaxiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // driversTableAdapter
-            // 
-            this.driversTableAdapter.ClearBeforeFill = true;
             // 
             // AddUserButton
             // 
@@ -229,87 +309,24 @@
             this.PriceButton.UseVisualStyleBackColor = true;
             this.PriceButton.Click += new System.EventHandler(this.PriceButton_Click);
             // 
-            // driverIDDataGridViewTextBoxColumn
+            // driversTableAdapter
             // 
-            this.driverIDDataGridViewTextBoxColumn.DataPropertyName = "DriverID";
-            this.driverIDDataGridViewTextBoxColumn.HeaderText = "DriverID";
-            this.driverIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.driverIDDataGridViewTextBoxColumn.Name = "driverIDDataGridViewTextBoxColumn";
-            this.driverIDDataGridViewTextBoxColumn.Visible = false;
-            this.driverIDDataGridViewTextBoxColumn.Width = 125;
+            this.driversTableAdapter.ClearBeforeFill = true;
             // 
-            // sNPDataGridViewTextBoxColumn
+            // звітToolStripMenuItem
             // 
-            this.sNPDataGridViewTextBoxColumn.DataPropertyName = "SNP";
-            this.sNPDataGridViewTextBoxColumn.HeaderText = "ПІБ";
-            this.sNPDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sNPDataGridViewTextBoxColumn.Name = "sNPDataGridViewTextBoxColumn";
-            this.sNPDataGridViewTextBoxColumn.Width = 125;
+            this.звітToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.отриматиЗвітПоЗаказахToolStripMenuItem});
+            this.звітToolStripMenuItem.Name = "звітToolStripMenuItem";
+            this.звітToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.звітToolStripMenuItem.Text = "Звіт";
             // 
-            // yearOfBirthDataGridViewTextBoxColumn
+            // отриматиЗвітПоЗаказахToolStripMenuItem
             // 
-            this.yearOfBirthDataGridViewTextBoxColumn.DataPropertyName = "YearOfBirth";
-            this.yearOfBirthDataGridViewTextBoxColumn.HeaderText = "Рік народження";
-            this.yearOfBirthDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.yearOfBirthDataGridViewTextBoxColumn.Name = "yearOfBirthDataGridViewTextBoxColumn";
-            this.yearOfBirthDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // passSeriesDataGridViewTextBoxColumn
-            // 
-            this.passSeriesDataGridViewTextBoxColumn.DataPropertyName = "PassSeries";
-            this.passSeriesDataGridViewTextBoxColumn.HeaderText = "Серія паспорту";
-            this.passSeriesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.passSeriesDataGridViewTextBoxColumn.Name = "passSeriesDataGridViewTextBoxColumn";
-            this.passSeriesDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // passNoDataGridViewTextBoxColumn
-            // 
-            this.passNoDataGridViewTextBoxColumn.DataPropertyName = "PassNo";
-            this.passNoDataGridViewTextBoxColumn.HeaderText = "Номер паспорту";
-            this.passNoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.passNoDataGridViewTextBoxColumn.Name = "passNoDataGridViewTextBoxColumn";
-            this.passNoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // employmentDateDataGridViewTextBoxColumn
-            // 
-            this.employmentDateDataGridViewTextBoxColumn.DataPropertyName = "EmploymentDate";
-            this.employmentDateDataGridViewTextBoxColumn.HeaderText = "Дата працевлаштування";
-            this.employmentDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.employmentDateDataGridViewTextBoxColumn.Name = "employmentDateDataGridViewTextBoxColumn";
-            this.employmentDateDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "номер телефону";
-            this.phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ratingDataGridViewTextBoxColumn
-            // 
-            this.ratingDataGridViewTextBoxColumn.DataPropertyName = "Rating";
-            this.ratingDataGridViewTextBoxColumn.HeaderText = "Рейтинг";
-            this.ratingDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
-            this.ratingDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // freedomDataGridViewCheckBoxColumn
-            // 
-            this.freedomDataGridViewCheckBoxColumn.DataPropertyName = "Freedom";
-            this.freedomDataGridViewCheckBoxColumn.HeaderText = "Вільність";
-            this.freedomDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.freedomDataGridViewCheckBoxColumn.Name = "freedomDataGridViewCheckBoxColumn";
-            this.freedomDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.Visible = false;
-            this.userIDDataGridViewTextBoxColumn.Width = 125;
+            this.отриматиЗвітПоЗаказахToolStripMenuItem.Name = "отриматиЗвітПоЗаказахToolStripMenuItem";
+            this.отриматиЗвітПоЗаказахToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
+            this.отриматиЗвітПоЗаказахToolStripMenuItem.Text = "Отримати звіт по заказах";
+            this.отриматиЗвітПоЗаказахToolStripMenuItem.Click += new System.EventHandler(this.отриматиЗвітПоЗаказахToolStripMenuItem_Click);
             // 
             // AdminForm
             // 
@@ -335,8 +352,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceAboutTaxiDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -349,7 +366,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private ServiceAboutTaxiDataSet serviceAboutTaxiDataSet;
-        private ServiceAboutTaxiDataSetTableAdapters.DriversTableAdapter driversTableAdapter;
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.Button AddUserButton;
         private System.Windows.Forms.Button DeleteUserButton;
@@ -361,8 +377,9 @@
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button PriceButton;
-        private System.Windows.Forms.BindingSource driversBindingSource3;
+        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.BindingSource driversBindingSource;
+        private ServiceAboutTaxiDataSetTableAdapters.DriversTableAdapter driversTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn driverIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sNPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearOfBirthDataGridViewTextBoxColumn;
@@ -373,5 +390,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ratingDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn freedomDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem звітToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отриматиЗвітПоЗаказахToolStripMenuItem;
     }
 }

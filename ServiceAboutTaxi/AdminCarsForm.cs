@@ -91,5 +91,10 @@ namespace ServiceAboutTaxi
                 }
             }
         }
+
+        private void AdminCarsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            carsTableAdapter.Update(serviceAboutTaxiDataSet);
+        }
     }
 }

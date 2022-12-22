@@ -280,6 +280,7 @@
             this.Name = "AdminCarsForm";
             this.Text = "AdminCarsForm";
             this.Activated += new System.EventHandler(this.AdminCarsForm_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminCarsForm_FormClosing);
             this.Load += new System.EventHandler(this.AdminCarsForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

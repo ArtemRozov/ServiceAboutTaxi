@@ -103,13 +103,21 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportDriverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportDriverForm.Designer.cs">
+      <DependentUpon>ReportDriverForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServiceAboutTaxiDataSet.cs">
       <DependentUpon>ServiceAboutTaxiDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="ServiceAboutTaxiDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ServiceAboutTaxiDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
@@ -159,6 +167,9 @@
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportDriverForm.resx">
+      <DependentUpon>ReportDriverForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,14 +187,17 @@
     </Compile>
     <None Include="ServiceAboutTaxiDataSet.xsc">
       <DependentUpon>ServiceAboutTaxiDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="ServiceAboutTaxiDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ServiceAboutTaxiDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="ServiceAboutTaxiDataSet.xss">
       <DependentUpon>ServiceAboutTaxiDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -9,3 +9,10 @@ namespace ServiceAboutTaxi
     {
     }
 }
+
+namespace ServiceAboutTaxi.ServiceAboutTaxiDataSetTableAdapters {
+    
+    
+    public partial class DriversTableAdapter {
+    }
+}

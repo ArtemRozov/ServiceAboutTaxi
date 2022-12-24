@@ -33,8 +33,9 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.serviceAboutTaxiDataSet = new ServiceAboutTaxi.ServiceAboutTaxiDataSet();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pricesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pricesTableAdapter = new ServiceAboutTaxi.ServiceAboutTaxiDataSetTableAdapters.PricesTableAdapter();
             this.priceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +43,9 @@
             this.pricePerKiloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceForRideDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceAboutTaxiDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pricesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,13 +64,13 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.logOutToolStripMenuItem.Text = "Log out";
             // 
             // contextMenuStrip1
@@ -76,6 +78,16 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // serviceAboutTaxiDataSet
+            // 
+            this.serviceAboutTaxiDataSet.DataSetName = "ServiceAboutTaxiDataSet";
+            this.serviceAboutTaxiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = this.serviceAboutTaxiDataSet;
+            this.bindingSource1.Position = 0;
             // 
             // dataGridView1
             // 
@@ -89,22 +101,17 @@
             this.pricePerKiloDataGridViewTextBoxColumn,
             this.priceForRideDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pricesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 90);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 108);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(802, 137);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // serviceAboutTaxiDataSet
-            // 
-            this.serviceAboutTaxiDataSet.DataSetName = "ServiceAboutTaxiDataSet";
-            this.serviceAboutTaxiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataGridView1.Size = new System.Drawing.Size(799, 165);
+            this.dataGridView1.TabIndex = 1;
             // 
             // pricesBindingSource
             // 
             this.pricesBindingSource.DataMember = "Prices";
-            this.pricesBindingSource.DataSource = this.serviceAboutTaxiDataSet;
+            this.pricesBindingSource.DataSource = this.bindingSource1;
             // 
             // pricesTableAdapter
             // 
@@ -122,9 +129,10 @@
             // carClassDataGridViewTextBoxColumn
             // 
             this.carClassDataGridViewTextBoxColumn.DataPropertyName = "CarClass";
-            this.carClassDataGridViewTextBoxColumn.HeaderText = "Клас авто";
+            this.carClassDataGridViewTextBoxColumn.HeaderText = "Клас Автомобіля";
             this.carClassDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.carClassDataGridViewTextBoxColumn.Name = "carClassDataGridViewTextBoxColumn";
+            this.carClassDataGridViewTextBoxColumn.ReadOnly = true;
             this.carClassDataGridViewTextBoxColumn.Width = 125;
             // 
             // pricePerKiloDataGridViewTextBoxColumn
@@ -138,7 +146,7 @@
             // priceForRideDataGridViewTextBoxColumn
             // 
             this.priceForRideDataGridViewTextBoxColumn.DataPropertyName = "PriceForRide";
-            this.priceForRideDataGridViewTextBoxColumn.HeaderText = "Ціна за заказ";
+            this.priceForRideDataGridViewTextBoxColumn.HeaderText = "Ціна за поїздку";
             this.priceForRideDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceForRideDataGridViewTextBoxColumn.Name = "priceForRideDataGridViewTextBoxColumn";
             this.priceForRideDataGridViewTextBoxColumn.Width = 125;
@@ -153,11 +161,13 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AdminPriceForm";
             this.Text = "AdminPriceForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPriceForm_FormClosing);
             this.Load += new System.EventHandler(this.AdminPriceForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceAboutTaxiDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pricesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,8 +180,9 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private ServiceAboutTaxiDataSet serviceAboutTaxiDataSet;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource pricesBindingSource;
         private ServiceAboutTaxiDataSetTableAdapters.PricesTableAdapter pricesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceIDDataGridViewTextBoxColumn;

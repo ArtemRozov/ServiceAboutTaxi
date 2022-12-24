@@ -50,6 +50,8 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CurrentOrderButton = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceAboutTaxiDataSet)).BeginInit();
@@ -78,6 +80,7 @@
             this.dataGridView1.DataSource = this.ordersBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(1, 73);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1179, 184);
@@ -89,6 +92,7 @@
             this.orderIDDataGridViewTextBoxColumn.HeaderText = "OrderID";
             this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
+            this.orderIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.orderIDDataGridViewTextBoxColumn.Visible = false;
             this.orderIDDataGridViewTextBoxColumn.Width = 125;
             // 
@@ -98,6 +102,7 @@
             this.startAddresDataGridViewTextBoxColumn.HeaderText = "Початкова адреса";
             this.startAddresDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.startAddresDataGridViewTextBoxColumn.Name = "startAddresDataGridViewTextBoxColumn";
+            this.startAddresDataGridViewTextBoxColumn.ReadOnly = true;
             this.startAddresDataGridViewTextBoxColumn.Width = 125;
             // 
             // endAddresDataGridViewTextBoxColumn
@@ -106,6 +111,7 @@
             this.endAddresDataGridViewTextBoxColumn.HeaderText = "Кінцева адреса";
             this.endAddresDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.endAddresDataGridViewTextBoxColumn.Name = "endAddresDataGridViewTextBoxColumn";
+            this.endAddresDataGridViewTextBoxColumn.ReadOnly = true;
             this.endAddresDataGridViewTextBoxColumn.Width = 125;
             // 
             // priceDataGridViewTextBoxColumn
@@ -114,6 +120,7 @@
             this.priceDataGridViewTextBoxColumn.HeaderText = "Ціна";
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             this.priceDataGridViewTextBoxColumn.Width = 125;
             // 
             // orderStateDataGridViewTextBoxColumn
@@ -122,6 +129,7 @@
             this.orderStateDataGridViewTextBoxColumn.HeaderText = "Стан";
             this.orderStateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.orderStateDataGridViewTextBoxColumn.Name = "orderStateDataGridViewTextBoxColumn";
+            this.orderStateDataGridViewTextBoxColumn.ReadOnly = true;
             this.orderStateDataGridViewTextBoxColumn.Width = 125;
             // 
             // orderTimeDataGridViewTextBoxColumn
@@ -130,6 +138,7 @@
             this.orderTimeDataGridViewTextBoxColumn.HeaderText = "Час заказу";
             this.orderTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.orderTimeDataGridViewTextBoxColumn.Name = "orderTimeDataGridViewTextBoxColumn";
+            this.orderTimeDataGridViewTextBoxColumn.ReadOnly = true;
             this.orderTimeDataGridViewTextBoxColumn.Width = 125;
             // 
             // startOrderTimeDataGridViewTextBoxColumn
@@ -138,6 +147,7 @@
             this.startOrderTimeDataGridViewTextBoxColumn.HeaderText = "Початок заказу";
             this.startOrderTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.startOrderTimeDataGridViewTextBoxColumn.Name = "startOrderTimeDataGridViewTextBoxColumn";
+            this.startOrderTimeDataGridViewTextBoxColumn.ReadOnly = true;
             this.startOrderTimeDataGridViewTextBoxColumn.Width = 125;
             // 
             // endOrderTimeDataGridViewTextBoxColumn
@@ -146,6 +156,7 @@
             this.endOrderTimeDataGridViewTextBoxColumn.HeaderText = "Кінець заказу";
             this.endOrderTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.endOrderTimeDataGridViewTextBoxColumn.Name = "endOrderTimeDataGridViewTextBoxColumn";
+            this.endOrderTimeDataGridViewTextBoxColumn.ReadOnly = true;
             this.endOrderTimeDataGridViewTextBoxColumn.Width = 125;
             // 
             // carDeliveryTimeDataGridViewTextBoxColumn
@@ -154,6 +165,7 @@
             this.carDeliveryTimeDataGridViewTextBoxColumn.HeaderText = "Час подачі авто";
             this.carDeliveryTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.carDeliveryTimeDataGridViewTextBoxColumn.Name = "carDeliveryTimeDataGridViewTextBoxColumn";
+            this.carDeliveryTimeDataGridViewTextBoxColumn.ReadOnly = true;
             this.carDeliveryTimeDataGridViewTextBoxColumn.Width = 125;
             // 
             // numberOfPassengersDataGridViewTextBoxColumn
@@ -162,6 +174,7 @@
             this.numberOfPassengersDataGridViewTextBoxColumn.HeaderText = "Кількість пасажирів";
             this.numberOfPassengersDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.numberOfPassengersDataGridViewTextBoxColumn.Name = "numberOfPassengersDataGridViewTextBoxColumn";
+            this.numberOfPassengersDataGridViewTextBoxColumn.ReadOnly = true;
             this.numberOfPassengersDataGridViewTextBoxColumn.Width = 125;
             // 
             // carIDDataGridViewTextBoxColumn
@@ -170,6 +183,7 @@
             this.carIDDataGridViewTextBoxColumn.HeaderText = "CarID";
             this.carIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.carIDDataGridViewTextBoxColumn.Name = "carIDDataGridViewTextBoxColumn";
+            this.carIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.carIDDataGridViewTextBoxColumn.Visible = false;
             this.carIDDataGridViewTextBoxColumn.Width = 125;
             // 
@@ -179,6 +193,7 @@
             this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
             this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.clientIDDataGridViewTextBoxColumn.Visible = false;
             this.clientIDDataGridViewTextBoxColumn.Width = 125;
             // 
@@ -238,11 +253,36 @@
             this.profileToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.profileToolStripMenuItem.Text = "Profile";
             // 
+            // CurrentOrderButton
+            // 
+            this.CurrentOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CurrentOrderButton.Location = new System.Drawing.Point(979, 379);
+            this.CurrentOrderButton.Name = "CurrentOrderButton";
+            this.CurrentOrderButton.Size = new System.Drawing.Size(190, 63);
+            this.CurrentOrderButton.TabIndex = 3;
+            this.CurrentOrderButton.Text = "Поточний заказ";
+            this.CurrentOrderButton.UseVisualStyleBackColor = true;
+            this.CurrentOrderButton.Click += new System.EventHandler(this.CurrentOrderButton_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox1.Location = new System.Drawing.Point(17, 397);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(353, 29);
+            this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "Чи готові ви приймати нові закази";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // DriverForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 450);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.CurrentOrderButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
@@ -284,5 +324,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
+        private System.Windows.Forms.Button CurrentOrderButton;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

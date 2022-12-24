@@ -22,7 +22,7 @@ namespace ServiceAboutTaxi
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
-             // TODO: данная строка кода позволяет загрузить данные в таблицу "serviceAboutTaxiDataSet.Drivers". При необходимости она может быть перемещена или удалена.
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "serviceAboutTaxiDataSet.Drivers". При необходимости она может быть перемещена или удалена.
             this.driversTableAdapter.Fill(this.serviceAboutTaxiDataSet.Drivers);
 
         }
@@ -87,16 +87,17 @@ namespace ServiceAboutTaxi
             }
         }
 
+        // Нужно для обновления данных в гриде(Мешает для Update при FormClosing)
         private void AdminForm_Activated(object sender, EventArgs e)
         {
-            string fillSqlLine = "SELECT * FROM Drivers";
+            /*string fillSqlLine = "SELECT * FROM Drivers";
             SqlConnection sqlconn = new SqlConnection(Constants.ConnectionString);
             sqlconn.Open();
             SqlDataAdapter oda = new SqlDataAdapter(fillSqlLine, sqlconn);
             DataTable dt = new DataTable();
             oda.Fill(dt);
             dataGridView1.DataSource = dt;
-            sqlconn.Close();
+            sqlconn.Close();*/
         }
 
         private void ClientsButton_Click(object sender, EventArgs e)

@@ -101,6 +101,10 @@ namespace ServiceAboutTaxi
                                     bestDriverID = (int)reader1["DriverID"];
                                 }                                
                             }
+                        } else 
+                        {
+                            MessageBox.Show("На жаль, зараз немає вільних водіїв", "Замовлення",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                         reader1.Close();
@@ -111,7 +115,7 @@ namespace ServiceAboutTaxi
 
                 //Знаходимо CarID найкращого водія
                 int carID = -1;
-                string findingCarID = @"SELECT CarID FROM Cars WHERE DriverID=2;";
+                string findingCarID = @"SELECT CarID FROM Cars WHERE DriverID=@id;";
 
                 using (SqlConnection connection = new SqlConnection(
                             Constants.ConnectionString))
@@ -138,7 +142,7 @@ namespace ServiceAboutTaxi
                 }
 
                 // Додавання заказу
-                if (clientID >= 0)
+                if (clientID >= 0 && bestDriverID > 0)
                 {
                     // Створення заказу у БД
                     Random rnd = new Random();
@@ -155,10 +159,22 @@ namespace ServiceAboutTaxi
                         DateTime.Parse(CarDeliveryTimeTextBox.Text),
                         int.Parse(PassengersCountTextBox.Text),
                         carID, //Change it to carId in some way (automatization task)
-                        clientID 
+                        clientID
                      );
+            
+                    string updateDriver = @"UPDATE Drivers SET Freedom='0' WHERE DriverID=@id";
+                    using (SqlConnection connection = new SqlConnection(
+                            Constants.ConnectionString))
+                    {
+                        SqlCommand command = new SqlCommand(
+                        updateDriver, connection);
+                        connection.Open();
+                        command.Parameters.AddWithValue("id", bestDriverID);
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                    }
 
-                    MessageBox.Show("Запись была успешно добавлена", "Добавление записи",
+                    MessageBox.Show("Ваш заказ прийнято", "Замовлення",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 

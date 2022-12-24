@@ -25,31 +25,7 @@ namespace ServiceAboutTaxi
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "serviceAboutTaxiDataSet.Orders". При необходимости она может быть перемещена или удалена.
             this.ordersTableAdapter.Fill(this.serviceAboutTaxiDataSet.Orders);
-
-            //Знаходження клієнтського ід
-            string findingClientID = @"SELECT ClientID FROM Clients WHERE UserID=@id;";
-
-            using (SqlConnection connection1 = new SqlConnection(
-                        Constants.ConnectionString))
-            {
-                SqlCommand cmd = new SqlCommand(
-                    findingClientID, connection1);
-                connection1.Open();
-                cmd.Parameters.AddWithValue("id", Constants.CurrentUserID);
-
-                using (SqlDataReader reader1 = cmd.ExecuteReader())
-                {
-                    if (reader1.HasRows)
-                    {
-                        while (reader1.Read())
-                        {
-                            clientID = (int)reader1["ClientID"];
-                        }
-                    }
-
-                    reader1.Close();
-                }
-            }
+            clientID = findingClientID();
         }
 
         // ДОРОБЛЕННЯ
@@ -77,13 +53,15 @@ namespace ServiceAboutTaxi
 
                         MessageBox.Show("Запись была успешно удалена", "Удаление записи", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        string fillSqlLine = "SELECT * FROM Orders";
+                        string fillSqlLine = "SELECT * FROM Orders WHERE ClientID='" + clientID.ToString() + "'";
                         SqlConnection sqlconn = new SqlConnection(Constants.ConnectionString);
                         sqlconn.Open();
+
                         SqlDataAdapter oda = new SqlDataAdapter(fillSqlLine, sqlconn);
                         DataTable dt = new DataTable();
                         oda.Fill(dt);
                         dataGridView1.DataSource = dt;
+
                         sqlconn.Close();
                     }
                 }
@@ -108,6 +86,43 @@ namespace ServiceAboutTaxi
             dataGridView1.DataSource = dt;
 
             sqlconn.Close();
+        }
+
+        private int findingClientID()
+        {
+            int clientID = -1;
+            // Знаходження клієнтського ід
+            string findingClientID = @"SELECT ClientID FROM Clients WHERE UserID=@id;";
+
+            using (SqlConnection connection1 = new SqlConnection(
+                        Constants.ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand(
+                    findingClientID, connection1);
+                connection1.Open();
+                cmd.Parameters.AddWithValue("id", Constants.CurrentUserID);
+
+                using (SqlDataReader reader1 = cmd.ExecuteReader())
+                {
+                    if (reader1.HasRows)
+                    {
+                        while (reader1.Read())
+                        {
+                            clientID = (int)reader1["ClientID"];
+                        }
+                    }
+
+                    reader1.Close();
+                }
+            }
+
+            return clientID;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ClietnCurrentOrder clietnCurrentOrder = new ClietnCurrentOrder(clientID);
+            clietnCurrentOrder.ShowDialog();
         }
     }
 }

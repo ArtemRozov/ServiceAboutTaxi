@@ -97,6 +97,7 @@
             this.dataGridView1.DataSource = this.clientsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 113);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(936, 148);
@@ -109,6 +110,7 @@
             this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
             this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.clientIDDataGridViewTextBoxColumn.Visible = false;
             this.clientIDDataGridViewTextBoxColumn.Width = 125;
             // 
@@ -118,6 +120,7 @@
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Номер телефону";
             this.phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.phoneNumberDataGridViewTextBoxColumn.Width = 125;
             // 
             // nameDataGridViewTextBoxColumn
@@ -126,6 +129,7 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Ім\'я";
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // homeAddresDataGridViewTextBoxColumn
@@ -134,6 +138,7 @@
             this.homeAddresDataGridViewTextBoxColumn.HeaderText = "Домашній адрес";
             this.homeAddresDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.homeAddresDataGridViewTextBoxColumn.Name = "homeAddresDataGridViewTextBoxColumn";
+            this.homeAddresDataGridViewTextBoxColumn.ReadOnly = true;
             this.homeAddresDataGridViewTextBoxColumn.Width = 125;
             // 
             // emailDataGridViewTextBoxColumn
@@ -142,6 +147,7 @@
             this.emailDataGridViewTextBoxColumn.HeaderText = "Пошта";
             this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             this.emailDataGridViewTextBoxColumn.Width = 125;
             // 
             // userIDDataGridViewTextBoxColumn
@@ -150,6 +156,7 @@
             this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
             this.userIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            this.userIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.userIDDataGridViewTextBoxColumn.Visible = false;
             this.userIDDataGridViewTextBoxColumn.Width = 125;
             // 

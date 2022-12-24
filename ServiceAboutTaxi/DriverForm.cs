@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -74,6 +75,34 @@ namespace ServiceAboutTaxi
                     reader1.Close();
                 }
             }
+
+            //Виставляємо чек бокс про вільність
+            string findingCheckBox = @"SELECT Freedom FROM Drivers WHERE DriverID=@id;";
+            bool state = false;
+
+            using (SqlConnection connection1 = new SqlConnection(
+                        Constants.ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand(
+                    findingCheckBox, connection1);
+                connection1.Open();
+                cmd.Parameters.AddWithValue("id", driverID);
+
+                using (SqlDataReader reader1 = cmd.ExecuteReader())
+                {
+                    if (reader1.HasRows)
+                    {
+                        while (reader1.Read())
+                        {
+                            state = (bool)reader1["Freedom"];
+                        }
+                    }
+
+                    reader1.Close();
+                }
+            }
+
+            checkBox1.Checked = state;
         }
 
         private void DriverForm_Activated(object sender, EventArgs e)
@@ -88,6 +117,72 @@ namespace ServiceAboutTaxi
             dataGridView1.DataSource = dt;
 
             sqlconn.Close();
+
+            // Перевірка чи є в водія поточний заказ
+            string findingCheckBox = @"SELECT OrderID FROM Orders WHERE CarID=@id AND OrderState=0;";
+            bool state = true;
+
+            using (SqlConnection connection1 = new SqlConnection(
+                        Constants.ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand(
+                    findingCheckBox, connection1);
+                connection1.Open();
+                cmd.Parameters.AddWithValue("id", carID);
+
+                using (SqlDataReader reader1 = cmd.ExecuteReader())
+                {
+                    if (reader1.HasRows)
+                    {
+                        while (reader1.Read())
+                        {
+                            state = false;
+                        }
+                    }
+
+                    reader1.Close();
+                }
+            }
+
+            checkBox1.Enabled = state;
+        }
+
+        private void CurrentOrderButton_Click(object sender, EventArgs e)
+        {
+            DriverCurrentOrder driverCurrentOrder = new DriverCurrentOrder(carID);
+            driverCurrentOrder.ShowDialog();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                string updateDriver = @"UPDATE Drivers SET Freedom='1' WHERE DriverID=@id";
+                using (SqlConnection connection = new SqlConnection(
+                        Constants.ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand(
+                    updateDriver, connection);
+                    connection.Open();
+                    command.Parameters.AddWithValue("id", driverID);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            else
+            {
+                string updateDriver = @"UPDATE Drivers SET Freedom='0' WHERE DriverID=@id";
+                using (SqlConnection connection = new SqlConnection(
+                        Constants.ConnectionString))
+                {
+                    SqlCommand command = new SqlCommand(
+                    updateDriver, connection);
+                    connection.Open();
+                    command.Parameters.AddWithValue("id", driverID);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
         }
     }
 }

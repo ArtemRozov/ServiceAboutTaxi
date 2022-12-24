@@ -47,14 +47,14 @@ namespace ServiceAboutTaxi
 
         private void AdminCarsForm_Activated(object sender, EventArgs e)
         {
-            string fillSqlLine = "SELECT * FROM Cars";
+            /*string fillSqlLine = "SELECT * FROM Cars";
             SqlConnection sqlconn = new SqlConnection(Constants.ConnectionString);
             sqlconn.Open();
             SqlDataAdapter oda = new SqlDataAdapter(fillSqlLine, sqlconn);
             DataTable dt = new DataTable();
             oda.Fill(dt);
             dataGridView1.DataSource = dt;
-            sqlconn.Close();
+            sqlconn.Close();*/
         }
 
         private void button1_Click(object sender, EventArgs e)

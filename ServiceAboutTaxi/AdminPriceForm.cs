@@ -21,7 +21,14 @@ namespace ServiceAboutTaxi
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "serviceAboutTaxiDataSet.Prices". При необходимости она может быть перемещена или удалена.
             this.pricesTableAdapter.Fill(this.serviceAboutTaxiDataSet.Prices);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "serviceAboutTaxiDataSet.Prices". При необходимости она может быть перемещена или удалена.
+            this.pricesTableAdapter.Fill(this.serviceAboutTaxiDataSet.Prices);
 
+        }
+
+        private void AdminPriceForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            pricesTableAdapter.Update(serviceAboutTaxiDataSet);
         }
     }
 }

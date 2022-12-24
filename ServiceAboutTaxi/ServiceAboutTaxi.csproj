@@ -149,7 +149,19 @@
     <Compile Include="AdminPriceForm.Designer.cs">
       <DependentUpon>AdminPriceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClietnCurrentOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClietnCurrentOrder.Designer.cs">
+      <DependentUpon>ClietnCurrentOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Constants.cs" />
+    <Compile Include="DriverCurrentOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverCurrentOrder.Designer.cs">
+      <DependentUpon>DriverCurrentOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="DriverForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +227,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPriceForm.resx">
       <DependentUpon>AdminPriceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClietnCurrentOrder.resx">
+      <DependentUpon>ClietnCurrentOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverCurrentOrder.resx">
+      <DependentUpon>DriverCurrentOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DriverForm.resx">
       <DependentUpon>DriverForm.cs</DependentUpon>
